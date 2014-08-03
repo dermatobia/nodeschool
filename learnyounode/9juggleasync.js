@@ -9,11 +9,11 @@ for (i = 0; i < maxLength; i++ ){
   url = urls[i];
   obj[url] = '';
 
-  (function(url){
-    http.get(url, function(resp){
-      obj[url] = ''
+  (function(site){
+    http.get(site, function(resp){
+      obj[site] = ''
       resp.on("data", function(data){
-        obj[url] += data;
+        obj[site] += data;
       })
       resp.on("end", function(){
         counter++;
